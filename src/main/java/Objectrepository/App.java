@@ -13,6 +13,6 @@ public class App
         System.out.println( "Hello World!" );
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\x136980\\Downloads\\chromedriver_win32\\chromedriver.exe");
         ChromeDriver driver= new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\x136980\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    
     }
 }
