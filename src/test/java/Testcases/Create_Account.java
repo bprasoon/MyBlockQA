@@ -25,10 +25,10 @@ public class Create_Account {
 	//
 	{
 		WebDriver testdriver=null;
-		for(int i=5;i<12;i++)
+		for(int i=1;i<3;i++)
 		{
 		Properties prop = new Properties();
-		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\Mavenproject\\src\\main\\java\\Configuration\\Mavendetails.properties");
+		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\GittMvn\\src\\main\\java\\Configuration\\Mavendetails.properties");
 		prop.load(fis);
 		
 		testdriver=BrowserinvokeUtility.getDriver();	
@@ -40,7 +40,7 @@ public class Create_Account {
 //UserName and Password	creation
 		Createaccount crea=new Createaccount(testdriver);
 		crea.Emailid().sendKeys(prop.getProperty("email"));
-		crea.Username().sendKeys(i+"sk04072017");
+		crea.Username().sendKeys(i+"qa582017");
 		crea.Password().sendKeys(prop.getProperty("password"));
 		crea.ConfirmPassword().click();
 		crea.ConfirmPassword().sendKeys(prop.getProperty("password"));

@@ -22,15 +22,15 @@ public class Sign_In_reusable {
 	{
 		
 		Properties prop = new Properties();
-		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\Mavenproject\\src\\main\\java\\Configuration\\Mavendetails.properties");
+		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\GittMvn\\src\\main\\java\\Configuration\\Mavendetails.properties");
 		prop.load(fis);
 		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//testdriver.manage().window().maximize();
-		testdriver.get(prop.getProperty("URL"));
+		//testdriver.get(prop.getProperty("URL"));
 		
 //UserName and Password		
 		signIn Inn=new signIn(testdriver);
-		Inn.Username().sendKeys(prop.getProperty("profileusername"));
+		Inn.Username().sendKeys(prop.getProperty("username"));
 		Inn.Password().sendKeys(prop.getProperty("password"));
 		Inn.SignInButton().click();
 		

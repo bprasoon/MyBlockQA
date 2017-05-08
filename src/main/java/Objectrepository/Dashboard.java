@@ -21,6 +21,9 @@ public class Dashboard {
 	@FindBy(id="profileFLi")
 	WebElement profilelinkfooter;
 	
+	@FindBy(xpath=".//a[@title='Go To My 2016 Taxes']")
+	WebElement prospectTCX;
+	
 	public WebElement AccessMyCard()
 	{
 		return Accessmycardlink;
@@ -29,5 +32,8 @@ public class Dashboard {
 	{
 		return profilelinkfooter;
 	}
-	
+	public WebElement GotoMyTaxes()
+	{
+		return prospectTCX;
+	}
 }

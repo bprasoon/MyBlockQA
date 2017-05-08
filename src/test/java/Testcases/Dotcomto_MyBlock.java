@@ -5,14 +5,18 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import Objectrepository.Dashboard;
 import Objectrepository.Dotcom;
 import Objectrepository.Header;
-import Reusable.Sign_In_reusable;
 import Reusable.BrowserinvokeUtility;
+import Reusable.Sign_In_reusable;
 
 
 public class Dotcomto_MyBlock {
@@ -20,27 +24,38 @@ public class Dotcomto_MyBlock {
 	
 	
 	@Test
-	public void dotcommyblock() throws IOException
+	public void dotcommyblock() throws IOException, InterruptedException
 	{
 		WebDriver testdriver=BrowserinvokeUtility.getDriver();
 		
 		Properties prop = new Properties();
-		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\Mavenproject\\src\\main\\java\\Configuration\\Mavendetails.properties");
+		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\GittMvn\\src\\main\\java\\Configuration\\Mavendetails.properties");
 		prop.load(fis);
 		testdriver.get(prop.getProperty("dotcomURL"));
-
+		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		Dotcom dot=new Dotcom(testdriver);
 		dot.SignIn().click();
+//		dot.CreateMyacc().click();
 		dot.SignInMyacc().click();
 		if (testdriver.equals("InternetExplorerDriver"))
 		{
 		testdriver.navigate().to("javascript:document.getElementById('overridelink').click()");
 		}
-//Sign in method		
+//Sign in method	
+//		Create_Account_reusable nn=new Create_Account_reusable();
+//		nn.createaccount(testdriver);
 		Sign_In_reusable nn=new Sign_In_reusable();
 		nn.signin_reuse(testdriver);
-		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+				
+		Dashboard prosp= new Dashboard(testdriver);
+		prosp.GotoMyTaxes().click();
+		
+		WebDriverWait myblocklink=new WebDriverWait(testdriver, 20);
+		myblocklink.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='pageBodyInnerDiv']/div[3]/div/div[1]/div/div/h1")));
+		testdriver.findElement(By.xpath("//div[@id='myHRBlockLink']/a")).click();
+		Thread.sleep(3000);
 		
 //Sign Out
 		Actions hover=new Actions(testdriver);
@@ -52,94 +67,13 @@ public class Dotcomto_MyBlock {
 	
 	}
 
+	
+	
 
 }
 
 
 
-		
-//		public void signin_reuse() throws IOException
-//		WebDriver testdriver=null;
-//		Properties prop = new Properties();
-//		FileInputStream fis= new FileInputStream("C:\\Users\\x136980\\workspace1\\Intro\\src\\testcases\\details.properties");
-//		prop.load(fis);
-//		
-//			
-//		if (prop.getProperty("browser").equals("chrome"))
-//		{
-//			System.setProperty("webdriver.chrome.driver", "C:\\Users\\x136980\\Downloads\\chromedriver_win32\\chromedriver.exe");		
-//			testdriver= new ChromeDriver();
-//	    }
-//		else if (prop.getProperty("browser").equals("firefox"))
-//		{
-//			System.setProperty("webdriver.gecko.driver", "C:\\Users\\x136980\\Downloads\\geckodriver-v0.13.0-win64\\geckodriver.exe");	
-//			testdriver= new FirefoxDriver();
-//		}
-//		else
-//		{
-//			System.setProperty("webdriver.ie.driver", "C:\\Users\\x136980\\Downloads\\IEDriverServer_Win32_3.0.0\\IEDriverServer.exe");			
-//			testdriver= new InternetExplorerDriver();
-//		}
-//		testdriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//		testdriver.get(prop.getProperty("URL"));
-//		
-////UserName and Password		
-//		signIn Inn=new signIn(testdriver);
-//		Inn.Username().sendKeys(prop.getProperty("username"));
-//		Inn.Password().sendKeys(prop.getProperty("password"));
-//		Inn.SignInButton().click();
-//		
-////Security answer link
-//		security1 anslink =new security1(testdriver);
-//		anslink.Answerlink().click();
-//		
-////Security Answer page
-//		security2 secans =new security2(testdriver);
-//		String secq=secans.Securityques().getText();	
-//		
-//		if(secq.equals("In what city were you born?")){
-//			secans.Securityans().sendKeys("born");
-//		}
-//		else if(secq.equals("In what city was your first job?")){
-//			secans.Securityans().sendKeys("job");
-//		}
-//		else if(secq.equals("What is the middle name of your youngest child?")){
-//			secans.Securityans().sendKeys("child");
-//		}
-//		else if(secq.equals("What was the make and model of your first car?")){
-//			secans.Securityans().sendKeys("car");
-//		}	
-//		else if(secq.equals("What was your high school mascot?")){
-//			secans.Securityans().sendKeys("mascot");			
-//		}
-//		else if(secq.equals("What is your oldest sibling's birthday month and year?")){
-//			secans.Securityans().sendKeys("year");			
-//		}
-//		else if(secq.equals("What was the last name of your 3rd grade teacher?")){
-//			secans.Securityans().sendKeys("teacher");			
-//		}
-//		else if(secq.equals("In what city does your nearest sibling live?")){
-//			secans.Securityans().sendKeys("live");			
-//		}
-//		else if(secq.equals("What street did you live on in 6th grade?")){
-//			secans.Securityans().sendKeys("grade");			
-//		}
-//		else if(secq.equals("What was the name of your first pet?")){
-//			secans.Securityans().sendKeys("pet");			
-//		}
-//		else if(secq.equals("What is your favorite vacation spot?")){
-//			secans.Securityans().sendKeys("spot");			
-//		}
-//		else if(secq.equals("What was your childhood nickname?")){
-//			secans.Securityans().sendKeys("nickname");			
-//		}
-//		boolean selection1= secans.Remembercheck().isEnabled();
-//				
-//		 if(selection1==true)
-//		 {
-//			 secans.Remembercheck().click(); 
-//		 }
-//		secans.Nextbutton().click();
 		
 
 

@@ -23,7 +23,7 @@ public class Sign_In {
 	public void signin() throws IOException, InterruptedException
 	{
 		Properties prop = new Properties();
-		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\Mavenproject\\src\\main\\java\\Configuration\\Mavendetails.properties");
+		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\GittMvn\\src\\main\\java\\Configuration\\Mavendetails.properties");
 		prop.load(fis);
 // Invoking the sign in method	
 		Sign_In_reusable n=new Sign_In_reusable();

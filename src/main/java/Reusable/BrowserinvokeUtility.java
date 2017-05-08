@@ -19,7 +19,7 @@ public class BrowserinvokeUtility {
 	
 	public static WebDriver getDriver() throws IOException{
 		Properties prop = new Properties();
-		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\Mavenproject\\src\\main\\java\\Configuration\\Mavendetails.properties");
+		FileInputStream fis= new FileInputStream("C:\\tools\\Maven_Apps\\GittMvn\\src\\main\\java\\Configuration\\Mavendetails.properties");
 		prop.load(fis);
 		WebDriver driver = null;
 		
