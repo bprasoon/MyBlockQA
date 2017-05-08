@@ -9,7 +9,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import Objectrepository.Cardproofingscreen;
-
 import Objectrepository.Dashboard;
 import Objectrepository.Header;
 import Reusable.BrowserinvokeUtility;
@@ -24,7 +23,7 @@ public class Card_Proofing {
 	{
 			
 // Invoking the sign in method	
-		Sign_In_reusable n=new Sign_In_reusable();
+		Sign_In_reusable n=new Sign_In_reusable(testdriver);
 		WebDriver testdriver=n.signin_reuse(BrowserinvokeUtility.getDriver());
 		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
