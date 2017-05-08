@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import Objectrepository.Dashboard;
 import Objectrepository.Dotcom;
 import Objectrepository.Header;
+import Objectrepository.TCX;
 import Reusable.BrowserinvokeUtility;
 import Reusable.Sign_In_reusable;
 
@@ -52,9 +53,11 @@ public class Dotcomto_MyBlock {
 		Dashboard prosp= new Dashboard(testdriver);
 		prosp.GotoMyTaxes().click();
 		
+		TCX mbnavigation =new TCX(testdriver);
 		WebDriverWait myblocklink=new WebDriverWait(testdriver, 20);
 		myblocklink.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='pageBodyInnerDiv']/div[3]/div/div[1]/div/div/h1")));
-		testdriver.findElement(By.xpath("//div[@id='myHRBlockLink']/a")).click();
+		mbnavigation.MyBlockButton().click();
+		//testdriver.findElement(By.xpath("//div[@id='myHRBlockLink']/a")).click();
 		Thread.sleep(3000);
 		
 //Sign Out
