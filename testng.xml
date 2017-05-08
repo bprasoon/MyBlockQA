@@ -10,6 +10,7 @@
 		<class name="Testcases.Help_Page"/>
 		<class name="Testcases.Tax_History"/>
 		<class name="Testcases.My_Documents_Doc_Upload"/>
+		<class name="Testcases.Dotcomto_MyBlock"/>
 	</classes>		
 </test>
 
