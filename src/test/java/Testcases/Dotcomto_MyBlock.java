@@ -34,7 +34,7 @@ public class Dotcomto_MyBlock {
 		prop.load(fis);
 		testdriver.get(prop.getProperty("dotcomURL"));
 		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			
+		System.out.println("Comment the reusable sign_in if does not want to enter the QA URL");	
 		Dotcom dot=new Dotcom(testdriver);
 		dot.SignIn().click();
 //		dot.CreateMyacc().click();
@@ -57,8 +57,7 @@ public class Dotcomto_MyBlock {
 		WebDriverWait myblocklink=new WebDriverWait(testdriver, 20);
 		myblocklink.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='pageBodyInnerDiv']/div[3]/div/div[1]/div/div/h1")));
 		mbnavigation.MyBlockButton().click();
-		//testdriver.findElement(By.xpath("//div[@id='myHRBlockLink']/a")).click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		
 //Sign Out
 		Actions hover=new Actions(testdriver);

@@ -27,7 +27,7 @@ public class BrowserinvokeUtility {
 		{
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\x136980\\Downloads\\chromedriver_win32\\2.29\\chromedriver.exe");	
 			HashMap<String, String> mobileEmulation = new HashMap<String, String>();
-		  	mobileEmulation.put("deviceName", "Apple iPhone 4"); //"Samsung Galaxy S4", "Apple iPad", "Apple iPhone 4"
+		  	mobileEmulation.put("deviceName", "Apple iPhone 5"); //"Samsung Galaxy S4", "Apple iPad", "Apple iPhone 4"
 		    HashMap<String, Object> chromeOptions = new HashMap<String, Object>();
 		    chromeOptions.put("mobileEmulation", mobileEmulation);                     
 		    DesiredCapabilities dc = DesiredCapabilities.chrome();
@@ -40,7 +40,12 @@ public class BrowserinvokeUtility {
 		{
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\x136980\\Downloads\\chromedriver_win32\\2.29\\chromedriver.exe");	
 			DesiredCapabilities dc=DesiredCapabilities.chrome();
-			dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+			ChromeOptions options = new ChromeOptions();
+			//options.addArguments("disable-infobars");
+			//options.addArguments("-incognito");
+			options.addArguments("start-maximized");
+			dc.setCapability(ChromeOptions.CAPABILITY, options);
+			//dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 			driver= new ChromeDriver(dc);
 		}
 		

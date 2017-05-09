@@ -23,7 +23,7 @@ public class Card_Proofing {
 	{
 			
 // Invoking the sign in method	
-		Sign_In_reusable n=new Sign_In_reusable(testdriver);
+		Sign_In_reusable n=new Sign_In_reusable();
 		WebDriver testdriver=n.signin_reuse(BrowserinvokeUtility.getDriver());
 		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		

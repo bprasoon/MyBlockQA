@@ -26,7 +26,7 @@ public class Sign_In_reusable {
 		prop.load(fis);
 		testdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//testdriver.manage().window().maximize();
-		//testdriver.get(prop.getProperty("URL"));
+		testdriver.get(prop.getProperty("URL"));
 		
 //UserName and Password		
 		signIn Inn=new signIn(testdriver);
