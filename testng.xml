@@ -6,11 +6,6 @@
 <test name="Regression testcases">
 	<classes>
 		<class name="Testcases.Sign_In"/>
-		<class name="Testcases.Profile_Page"/>
-		<class name="Testcases.Help_Page"/>
-		<class name="Testcases.Tax_History"/>
-		<class name="Testcases.My_Documents_Doc_Upload"/>
-		<class name="Testcases.Dotcomto_MyBlock"/>
 	</classes>		
 </test>
 
